@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
             isOffCooldown = false;
 
             answerText.setAlpha(0f);
-            int answerNumber = (int) (Math.random() * 14 + 1);
+            int answerNumber = (int) (Math.random() * 14);
             answerText.setText(answers[answerNumber]);
 
 
