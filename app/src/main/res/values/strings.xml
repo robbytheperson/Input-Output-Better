@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Input-Output</string>
+    <string name="title">Magic 8-Ball</string>
+    <string name="defaultAnswer">It is decidedly so.</string>
+    <string name="enterText">Ask a yes/no question!</string>
+    <string name="hintText">Type here</string>
+    <string name="askButtonText">ASK</string>
+</resources>
