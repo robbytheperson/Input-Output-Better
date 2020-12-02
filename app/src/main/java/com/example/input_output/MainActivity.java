@@ -11,6 +11,7 @@ import android.os.Handler;
 import android.text.TextPaint;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Timer;
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     boolean isOffCooldown;
     EditText checkText;
     String savedText;
+    ImageView triangle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,11 +49,12 @@ public class MainActivity extends AppCompatActivity {
         checkText = findViewById(R.id.ask_ET);
 
         answerText = findViewById(R.id.answer_TV);
-        answerText.setAlpha(0f);
+
+        triangle = findViewById(R.id.blue_triangle);
 
         appearDelay = 500;
-        disappearDelay = 2500;
-        totalDelay = 3500;
+        disappearDelay = appearDelay + 2500;
+        totalDelay = disappearDelay + 1000;
 
         isOffCooldown = true;
 
@@ -86,9 +89,11 @@ public class MainActivity extends AppCompatActivity {
             final Handler handler = new Handler();
             handler.postDelayed(() -> {
                 answerText.animate().alpha(1f).setDuration(1000);
+                triangle.animate().alpha(1).setDuration(1000);
             }, appearDelay);
             handler.postDelayed(() -> {
                 answerText.animate().alpha(0f).setDuration(1000);
+                triangle.animate().alpha(0).setDuration(1000);
             }, disappearDelay);
             handler.postDelayed(() -> {
                 isOffCooldown = true;
